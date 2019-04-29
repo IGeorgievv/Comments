@@ -1,0 +1,25 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// Required
+@import "./bootstrap/_functions";
+@import "./cyborg/_variables";
+@import "./bootstrap/_variables";
+@import "./bootstrap/_mixins";
+@import "./bootstrap/_grid";
+@import "./bootstrap/bootstrap";
+@import "./cyborg/_bootswatch";
+
+// Optional
+// @import "node_modules/bootstrap/scss/reboot";
+// @import "node_modules/bootstrap/scss/type";
+// @import "node_modules/bootstrap/scss/images";
+// @import "node_modules/bootstrap/scss/code";
+// @import "node_modules/bootstrap/scss/grid";
+
+
+
+// @import "./bootstrap/_functions";
+// @import "./bootstrap/_variables";
+// @import "./bootstrap/_mixins";
+// @import "./bootstrap/bootswatch";

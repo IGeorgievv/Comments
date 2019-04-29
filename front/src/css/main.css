@@ -1,0 +1,81 @@
+
+
+/*
+#a3445d
+#8d2d56
+#0d050e
+#2b193e
+#d53c3c
+*/
+
+/* body {
+	padding: 0;
+	margin: 0;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	line-height: 1.2;
+	font-size: 16px;
+	text-align: center;
+	color: #8d2d56;
+	background: #0d050e;
+} */
+
+*, *:before, *:after {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		    box-sizing: border-box;
+}
+
+/* .title {
+	padding: 60px;
+	font-size: 30px;
+} */
+
+/* Form */
+
+/* .form-field,
+.btn {
+   -webkit-appearance: none;
+      -moz-appearance: none;
+   		   appearance: none;
+   background: none;
+}
+
+.form-field {
+	padding: 10px 20px 4px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	line-height: 1.2;
+	font-size: 16px;
+	color: #d53c3c;
+	border-radius: 2px;
+	border: 1px solid #a3445d;
+}
+
+.btn {
+	padding: 10px 20px 6px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	line-height: 1.2;
+	font-size: 16px;
+	border-radius: 2px;
+	border: 1px solid #a3445d;
+	cursor: pointer;
+} */
+
+/* .btn:hover {
+	border-radius: 8px;
+}
+
+.btn-go {
+	color: #0d050e;
+	background: #d53c3c;
+} */
+
+
+
+
+
+
+
+
+
