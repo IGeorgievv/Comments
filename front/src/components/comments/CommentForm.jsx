@@ -30,11 +30,11 @@ class CommentForm extends React.PureComponent {
       this.setState({disable: { 'disabled': "disable" }});
   }
 
-  clearField = (e) => {
+  clearForm = () => {
     if ( this.state.id !== "empty" ) {
       return;
     }
-    this.setState({[e.target.name]: ''});
+    this.setState({comment: ''});
   }
 
   checkComment = () => {
@@ -67,6 +67,7 @@ class CommentForm extends React.PureComponent {
       }
       else {
         this.props.actions.save( this.state.comment );
+        this.clearForm();
       }
     }
   }
@@ -84,10 +85,14 @@ class CommentForm extends React.PureComponent {
                     rows="2"
                     id="commentField"
                     onChange={this.handleChange}
-                    onClick={this.clearField}></textarea>
+                    onClick={this.clearForm}
+                    autoFocus = { this.state.id !== "empty" ? true : false }
+          ></textarea>
           { errorMsg && <p className="text-danger">{ errorMsg }</p> }
         </div>
-        <button type="submit" className="btn btn-primary btn-lg"{ ...disable }>{ id !== "empty" ? "Edit" : "Add" }</button>
+        <button type="submit" className="btn btn-primary btn-lg"{ ...disable }>
+          { id !== "empty" ? "Edit" : "Add" }
+        </button>
       </form>
     )
   }

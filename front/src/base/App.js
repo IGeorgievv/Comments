@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
 import '../css/_main.scss';
 import '../css/main.css';
+
 import Header from '../components/navigations/Header';
-import Home from '../components/home/Base';
+import Home from '../components/home/Home';
 import Comments from '../components/comments/Comments';
 
 class App extends Component {

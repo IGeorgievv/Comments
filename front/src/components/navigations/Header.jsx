@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 
 class Header extends React.Component {
   constructor(props) {
@@ -42,7 +41,6 @@ class Header extends React.Component {
 
   render() {
     const headerNavigation = this.state.header;
-    const user = this.props.user || {};
     let thisList = {};
     if (headerNavigation && headerNavigation.length >= 1) {
       thisList = headerNavigation.map((thisEl, id) => 
@@ -67,18 +65,6 @@ class Header extends React.Component {
       </header>
     );
   }
-
-  logOut = () => {
-    let { dispatch } = this.props;
-    const action = actions.unset();
-    dispatch(action);
-  }
 }
 
-function mapStateToProps (state) {
-  return {
-    user: state.user
-  };
-}
-
-export default connect(mapStateToProps)(Header);
+export default Header;
