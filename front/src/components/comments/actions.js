@@ -14,6 +14,13 @@ export function edit(data) {
   };
 }
 
+export function update(data) {
+  return {
+    type: actionTypes.UPDATE,
+    data: data
+  };
+}
+
 export function remove(data) {
   return {
     type: actionTypes.DELETE,

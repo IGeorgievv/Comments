@@ -9,7 +9,13 @@ module.exports = {
       publicPath: '/'
     },
     devServer: {
+      host: 'comments.th',
+      port: 8080,
       historyApiFallback: true,
+      compress: true,
+      allowedHosts: [
+          'data.comments.th',
+      ],
     },
     resolve: {
         extensions: [".jsx", ".js", ".css"],
@@ -68,6 +74,6 @@ module.exports = {
       new HtmlWebPackPlugin({
         template: "./src/index.html",
         filename: "./index.html"
-      })
+      }),
     ]
 };

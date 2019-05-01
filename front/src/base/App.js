@@ -18,18 +18,6 @@ class App extends Component {
     };
   }
 
-  // componentDidMount() {
-
-  //   fetch('/data/get/navigations')
-  //   .then(res => res.json())
-  //   .then(
-  //     (result) => {
-  //       if (result && result.header) this.setState({ header: result.header })
-  //     },
-  //     (error) => {}
-  //   )
-  // }
-
   render() {
     const headerData = this.state.header;
     let routeComponents = {};

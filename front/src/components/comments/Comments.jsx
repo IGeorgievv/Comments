@@ -10,14 +10,37 @@ class Comments extends React.Component {
     super(props);
 
     this.state = {
-      comment: props.comment || ''
+      comment: props.comment || '',
+      intervalID: ''
     }
+
+    this.updateComments();
+  }
+
+  updateComments = () => {
+    const useThis = this;
+    const interval = setInterval( function() {
+        useThis.getComments();
+      }, (1000 * 10) );
+    this.state.intervalID = interval;
+  }
+
+  getComments = () => {
+    fetch('http://data.comments.th/comments')
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.props.actions.update( result.records );
+      },
+      (error) => {}
+    )
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalID);
   }
 
   render() {
-    // const { comment } = this.state;
-
-    // const filteredList = this.props.list.filter(item => !item.archived);
 
     return (
       <div className="container">

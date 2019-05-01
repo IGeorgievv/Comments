@@ -5,9 +5,13 @@ export default function comments(comments = {}, action) {
 	switch (action.type) {
 		
 		case actionTypes.SAVE:
-			const idComment = Object.keys(comments).length;
+			createComment(action.data);
+			const lastCommentI = Object.keys(comments).length - 1;
+			let idComment = 0;
+			if( lastCommentI >= 0 )
+				idComment = +comments[lastCommentI].id + 1;
 			const newComment = { id: idComment, comment: action.data };
-			newComments[idComment] =  newComment;
+			newComments[lastCommentI + 1] =  newComment;
 			return { ...comments, ...comments = newComments };
 
 		case actionTypes.EDIT:
@@ -16,6 +20,12 @@ export default function comments(comments = {}, action) {
 			}
 			newComments[action.data.id]['comment'] = action.data.comment;
 			return { ...comments, ...comments = newComments };
+
+		case actionTypes.UPDATE:
+			if ( action.data ) {
+				return action.data;
+			}
+			return comments;
 
 		case actionTypes.DELETE:
 			if ( !newComments[action.data.id] ) {
@@ -26,4 +36,23 @@ export default function comments(comments = {}, action) {
 
 		default: return comments;
 	}
+}
+
+
+function createComment(data_msg) {
+  
+	fetch('http://data.comments.th/comments', {
+		method: 'POST',
+		body: JSON.stringify({
+			msg: data_msg
+		})
+	})
+	.then(res => res.json())
+	.then(
+		(result) => {
+			console.log( 'result:  ', result );
+			// this.props.actions.update( result.records );
+		},
+		(error) => {}
+	)
 }

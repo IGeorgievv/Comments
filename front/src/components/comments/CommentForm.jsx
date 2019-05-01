@@ -34,7 +34,7 @@ class CommentForm extends React.PureComponent {
     if ( this.state.id !== "empty" ) {
       return;
     }
-    this.setState({comment: ''});
+    this.setState({ comment: '', disable: { 'disabled': "disable" }});
   }
 
   checkComment = () => {
